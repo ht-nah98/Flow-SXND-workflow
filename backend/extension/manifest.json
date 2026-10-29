@@ -1,0 +1,83 @@
+{
+  "manifest_version": 3,
+  "name": "Flow Kit",
+  "version": "0.6.0",
+  "description": "Local agent bridge for Google Flow — runs batchexecute RPCs inside a signed-in flow.google.com tab, mints reCAPTCHA with hijack bypass, proxies API calls",
+  "permissions": [
+    "storage",
+    "alarms",
+    "tabs",
+    "webRequest",
+    "scripting",
+    "declarativeNetRequest",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://flow.google.com/*",
+    "https://flow-content.google/*",
+    "https://labs.google/*",
+    "https://aisandbox-pa.googleapis.com/*",
+    "http://127.0.0.1:8110/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://flow.google.com/*",
+        "https://labs.google/fx/tools/flow*",
+        "https://labs.google/fx/*/tools/flow*"
+      ],
+      "js": [
+        "hijack_bypass.js",
+        "recaptcha_enterprise.js",
+        "recaptcha__en.js",
+        "injected.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://flow.google.com/*",
+        "https://labs.google/fx/tools/flow*",
+        "https://labs.google/fx/*/tools/flow*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "injected.js",
+        "recaptcha_enterprise.js",
+        "recaptcha__en.js"
+      ],
+      "matches": [
+        "https://flow.google.com/*",
+        "https://labs.google/*"
+      ]
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "referer_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "side_panel": {
+    "default_path": "side_panel.html"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Flow Kit"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo2H6OpAdJceiqpiY4FHeuezdib3uVS/g03Ieh7Wr9qeqELKqEBKbFBiMoC6H0tHV+iTs7Pvoiyy0nIign2NC0y2G0Wenq/8Nph/H4SyaByZmiisS0BzwzusXyHpReVLX2vRFVTdUjWBWD76HDDhbcZ6cdjRhUdljM/ZKL6G1xM02k6rg1Hq8ylmmJHdTCJ/YZdFK1aPLC/vA4xqmz3BSpYJQ7taRXiDVEGzkqyxoYjcpppmfiGwz0Q+pCzKPfg4ay+wVr/OSBwy7UEeZhPVoVdTWLGkJppA+lLk1xhY/oKzxC+1aOZij+uWomEUqSfqWjp5NmxtYpzM49+HQmzV/HwIDAQAB"
+}

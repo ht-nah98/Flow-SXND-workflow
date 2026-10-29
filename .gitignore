@@ -1,0 +1,22 @@
+# Machine-local config and runtime data (the database, uploads and films live outside the repo)
+.env
+*.db
+*.db-shm
+*.db-wal
+
+# Python / Node build and cache output
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+node_modules/
+dist/
+*.tsbuildinfo
+test-results/
+playwright-report/
+
+# AI tooling state
+.omc/
+.superpowers/
+.claude/scheduled_tasks.lock

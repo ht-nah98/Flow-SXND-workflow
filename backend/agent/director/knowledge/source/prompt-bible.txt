@@ -1,0 +1,938 @@
+AI FILM PROMPT SYSTEM
+HỆ THỐNG VIẾT PROMPT SHOT + 100 COMMAND ĐẠO DIỄN CAMERA CHO AI VIDEO
+Từ Story Beat → Shot Design → Command Layer → Prompt hoàn chỉnh
+PHẠM VI
+AI Film / MV / Image-to-Video / Previz
+NỘI DUNG
+Phương pháp viết shot + grammar command + 100 command
+PHIÊN BẢN
+1.0 · 05/10/2026
+Nguồn nền tảng: phân tích cấu trúc PROMPT FMV.docx (11 trang) + hệ command được chuẩn hóa cho workflow AI filmmaking.
+MỤC LỤC & CÁCH DÙNG TÀI LIỆU
+PHẦN I  Tư duy đúng: Prompt shot là mini production brief, command chỉ là lớp điều khiển.
+PHẦN II  Kiến trúc Prompt Shot chuẩn và Prompt Compiler.
+PHẦN III  Command Grammar: Atomic / Composite / Macro; cách stack và xử lý xung đột.
+PHẦN IV  Workflow viết một shot từ ý tưởng đến prompt final.
+PHẦN V  Ví dụ chuyển prompt FMV thành command-driven prompt.
+PHẦN VI  Thư viện 100 command: giải thích tiếng Việt + expansion tiếng Anh + ghép/tránh.
+PHẦN VII  Shot recipes, checklist và template copy-paste.
+QUY ƯỚC: Dấu /command trong tài liệu là shorthand để thiết kế và giao tiếp với AI/agent. Nó KHÔNG mặc định là cú pháp native của mọi model. Khi engine không có preset tương ứng, hãy dùng phần “Prompt expansion” bằng ngôn ngữ tự nhiên.
+PHẦN I — TƯ DUY ĐÚNG VỀ MỘT SHOT PROMPT
+# 1. Prompt shot không phải là danh sách camera keyword
+Qua 11 prompt trong tài liệu FMV, cấu trúc lặp lại nhất quán là: khóa nhân vật/reference → dựng bối cảnh → xác định góc quay → mô tả hành động → mô tả camera → ánh sáng/màu → âm thanh → thời lượng/edit grammar. Một shot vì vậy phải được xem như một mini production brief, không phải một chuỗi camera command.
+CÔNG THỨC CỐT LÕISHOT PROMPT = CONTINUITY + SCENE + SUBJECT/PROPS + SHOT DESIGN + ACTION TIMELINE + CAMERA CHOREOGRAPHY + OPTICS/FOCUS + LIGHTING/ATMOSPHERE + SOUND + DURATION/EDIT + CONSTRAINTS
+# 2. Command đứng ở đâu trong hệ thống?
+Command không thay thế prompt. Command là “director modifier”: nó tác động vào một hoặc nhiều trường của shot brief. Ví dụ `/pov` sửa Perspective; `/dolly-in` sửa Camera Choreography; `/rack-focus-near` sửa Optics/Focus; `/tvcommercial` là macro command tác động đồng thời lên directing style, camera, shot priorities và polish.
+Lớp
+Nhiệm vụ
+Ví dụ
+1. STORY / SHOT BRIEF
+Ai? Ở đâu? Làm gì? Vì sao shot tồn tại?
+Cô gái chạy trên bậc thang, quay lại gọi người quay theo.
+2. COMMAND LAYER
+Chọn framing, perspective, movement, rig, optics, effect.
+/pov + /handheld + /push-in
+3. PROMPT COMPILER
+Mở rộng command thành ngôn ngữ điện ảnh cụ thể, có vị trí và timeline.
+POV at natural eye height; handheld follows footsteps; from 5s gradually push toward her.
+# 3. 8 bài học trực tiếp từ PROMPT FMV
+Continuity được khóa trước camera: ngoại hình, trang phục, props quan trọng phải ổn định xuyên shot.
+Action và Camera là hai timeline khác nhau. Nhân vật có thể có nhiều beat trong 10 giây, nhưng camera vẫn chỉ làm một job chính.
+Camera placement phải có tính vật lý: “bên trong lò nhìn ra”, “trên sàn nhìn lên”, “từ trần nhìn xuống”, “ngoài cửa sổ nhìn vào”.
+Góc quay (shot design) khác với chuyển động camera. Close-up/POV/low-angle nói camera nhìn thế nào; dolly/pan/tracking nói camera di chuyển thế nào.
+Timing cụ thể giúp AI hiểu choreography: 0–3s, 3–5s, 5–8s, 8–10s.
+One-shot / no-cuts là edit grammar và phải được viết rõ nếu cần giữ liên tục.
+Foreground, background, ánh sáng và vật lý môi trường giúp shot có chiều sâu thay vì chỉ “camera moves”.
+End state cần được thiết kế: camera dừng ở đâu, khung hình cuối là gì, giữ bao lâu.
+PHẦN II — KIẾN TRÚC PROMPT SHOT CHUẨN
+# 4. 11 block của một prompt hoàn chỉnh
+Block
+Vai trò
+A. COMMAND STACK
+Shorthand cho ý đồ camera/effect. Viết trước để agent/compiler hiểu intent, nhưng final prompt vẫn phải expand.
+B. REFERENCE & CONTINUITY
+Khóa identity, trang phục, tỉ lệ cơ thể, props, vehicle, location continuity.
+C. SCENE / ENVIRONMENT
+Không gian vật lý, thời gian trong ngày, foreground/background, weather, scene geometry.
+D. SUBJECT / PROPS / VEHICLE
+Ai/vật gì là chủ thể; props nào bắt buộc; vật nào không được sinh thêm.
+E. SHOT DESIGN
+Shot size, angle, perspective, spatial camera placement, composition.
+F. ACTION / PERFORMANCE
+Hành động vật lý, biểu cảm, eye-line, interaction; chia theo time beat nếu phức tạp.
+G. CAMERA CHOREOGRAPHY
+Camera làm gì, theo hướng nào, tốc độ nào, bám ai, phản ứng với action ra sao.
+H. OPTICS / FOCUS
+Lens feel, focal behavior, rack focus, depth of field, motion blur khi thực sự cần.
+I. LIGHTING / COLOR / ATMOSPHERE
+Nguồn sáng, contrast, palette, particles, weather, texture không khí.
+J. SOUND
+Diegetic sound, ambience, dialogue/music nếu model hoặc workflow dùng audio.
+K. DURATION / EDIT / CONSTRAINTS
+Độ dài, one-shot/cuts, end frame, continuity lock, negative constraints.
+# 5. Prompt skeleton chuẩn — copy và điền
+COMMAND STACK:PRIMARY VIEW: /...FRAMING: /...MOVEMENT: /...RIG / OPTICS / EFFECT: /... (optional)REFERENCE & CONTINUITY:Use the attached reference as the exact visual identity.Preserve [face / hairstyle / wardrobe / props / vehicle / location continuity].SCENE / ENVIRONMENT:[Physical location, time of day, foreground, background, weather, atmosphere.]SUBJECT / PROPS:[Who or what is present. Important props and spatial relationships.]SHOT DESIGN:[Shot size + angle/perspective + exact camera placement + composition.]ACTION / PERFORMANCE:0–Xs: [...]X–Ys: [...]Y–Zs: [...]CAMERA CHOREOGRAPHY:[One principal camera job. Direction + speed + path + what the camera follows/reveals.]OPTICS / FOCUS:[Only when needed: focus shift, lens behavior, DOF, shutter feel.]LIGHTING / COLOR / ATMOSPHERE:[Lighting source, palette, contrast, particles/weather.]SOUND:[Optional diegetic sound / ambience / music cue.]DURATION / EDIT:[Duration]. [One continuous shot / cuts allowed].END FRAME:[Exact final composition and hold.]HARD CONSTRAINTS:[No identity drift. No outfit change. No extra people. No sudden camera jump. ...]
+# 6. Action Timeline và Camera Timeline phải tách nhau
+Time
+SUBJECT / PERFORMANCE
+CAMERA
+0–3s
+Nhân vật bắt đầu hành động chính.
+Giữ framing ổn định để AI đọc scene geometry.
+3–6s
+Có reaction / interaction mới.
+Camera bắt đầu move chính hoặc reframe nhẹ.
+6–9s
+Beat cảm xúc / climax.
+Camera tiến gần, orbit, rack focus… nếu mục tiêu shot cần.
+9–10s
+Hành động kết thúc.
+Đến end frame, giảm tốc và giữ 0.3–0.8s.
+Nguyên tắc: Action có thể nhiều beat, nhưng Camera thường chỉ nên có 1 primary movement. Nếu cần 2 movement, hãy ghi rõ thứ tự “first… then…”, không để chúng cạnh tranh cùng lúc.
+# 7. Spatial camera placement — viết như đạo diễn hình ảnh
+Không chỉ viết “POV”; hãy nói POV từ đâu: inside the oven, behind the driver, from the phone, from floor level, outside the window.
+Không chỉ viết “low angle”; hãy nói camera cao bao nhiêu, gần/xa nhân vật, lens nhìn theo hướng nào.
+Đặt foreground có chủ đích: khung cửa, lá cây, vai nhân vật, cạnh bàn… để tạo depth và có thể dùng làm transition.
+Đặt end frame trước khi viết movement. Khi biết camera phải kết ở đâu, đường camera sẽ rõ hơn.
+PHẦN III — COMMAND GRAMMAR & PROMPT COMPILER
+# 8. Ba loại command
+Loại
+Định nghĩa
+Ví dụ
+Cách dùng
+Atomic
+Thay đổi một dimension chính của shot.
+/closeup, /low-angle, /dolly-in, /rack-focus-near
+Có thể stack 2–4 atomic command nếu không mâu thuẫn.
+Composite
+Đã gói nhiều hành vi camera/time/rig thành một kỹ thuật.
+/snorricam, /bullet-time, /glambot, /whip-transition
+Dùng làm “primary technique”; giảm số modifier phụ.
+Macro
+Một mini-directing recipe hoặc AI scale/effect phức tạp.
+/earth-zoom-in, /macrozoom, /tvcommercial, /productexplosion
+Dùng tối đa 1 macro/shot; expand thành prompt đầy đủ và thêm constraints.
+# 9. Command Stack: thứ tự đúng
+[PRIMARY VIEW / PERSPECTIVE]        + [FRAMING]        + [ANGLE]        + [ONE PRIMARY MOVEMENT]        + [RIG / FEEL]        + [OPTICS / FOCUS]        + [OPTIONAL EFFECT / TRANSITION]
+Mỗi nhóm thường chỉ chọn 0–1 command. Không cần lấp đầy tất cả nhóm.
+Primary movement: chọn một. Movement phụ chỉ thêm nếu là continuation tự nhiên hoặc được mô tả theo timeline.
+Macro command thường thay thế phần lớn stack, không phải cộng thêm vô hạn.
+Command stack là metadata/brief. Prompt expansion mới là thứ gửi cho engine nếu engine không có native preset.
+# 10. Ví dụ compile command → camera language
+Command stack
+Natural-language expansion
+/pov + /handheld + /push-in
+First-person POV at natural eye height. Handheld movement follows the operator’s footsteps with subtle vertical and lateral sway. From the midpoint of the shot, gradually push forward toward the subject, increasing speed slightly, then settle into the final close framing.
+/full-shot + /low-angle + /orbit-360 + /gimbal
+Full-body low-angle hero framing. The subject remains stationary while a gimbal camera performs one smooth 360-degree orbit at constant radius and height, returning precisely to the starting front view.
+/static + /over-shoulder + /rack-focus-far
+Locked over-the-shoulder composition. Start focused on the foreground shoulder/hand, then smoothly rack focus to the distant character without changing camera position.
+/macrozoom
+Begin with the full subject, then continuously travel through medium, close-up and extreme macro scale until a single material texture fills the frame. Keep the transition seamless and preserve the original object geometry.
+/tvcommercial
+Apply a premium commercial directing treatment: prioritize one clear hero action, tactile detail, controlled elegant camera motion, polished lighting, and a clean final hero composition. If the shot must remain continuous, explicitly enforce one-shot/no-cuts.
+# 11. Conflict rules — tránh prompt tự đánh nhau
+Cặp / tình huống
+Cách xử lý
+`/static` + dolly/pan/tracking
+Mâu thuẫn nếu cùng lúc. Chỉ hợp nếu viết “hold static for 2s, then dolly in”.
+`/handheld` + `/gimbal` / `/steadicam` / `/robot-arm`
+Các rig feel khác nhau. Chọn một rig chủ đạo.
+`/low-angle` + `/high-angle` / `/overhead`
+Hai camera placement đối nghịch. Chỉ dùng tuần tự nếu camera thực sự đổi vị trí.
+`/zoom-in` + `/dolly-in`
+Không mặc định giống nhau. Nếu cố ý kết hợp phải nêu thành dolly zoom hoặc hai phase riêng.
+`/pov` + `/over-shoulder`
+Hai perspective khác nhau ở cùng thời điểm.
+Macro + Macro
+Không stack `/earthzoom + /macrozoom + /tvcommercial` trong một shot ngắn. Chọn một mục tiêu chính.
+`/tvcommercial` + `one-shot, no cuts`
+Không hẳn mâu thuẫn, nhưng phải khóa “single continuous commercial shot”; nếu không model dễ tự làm montage.
+PHẦN IV — WORKFLOW VIẾT MỘT SHOT TỪ Ý TƯỞNG ĐẾN FINAL PROMPT
+# 12. Quy trình 9 bước
+Viết STORY BEAT trong một câu: chuyện gì phải xảy ra trong shot này?
+Khóa REFERENCE & CONTINUITY: nhân vật, trang phục, props, vehicle, location nào không được drift?
+Định vị CAMERA trong không gian: ở đâu, cao bao nhiêu, nhìn theo hướng nào?
+Chọn FRAMING + ANGLE/PERSPECTIVE trước khi chọn movement.
+Viết ACTION TIMELINE của nhân vật; nếu shot đơn giản thì không cần timestamp.
+Chọn ONE PRIMARY CAMERA JOB. Sau đó mới chọn rig/focus/effect bổ trợ.
+Viết LIGHTING/ATMOSPHERE chỉ đủ để giữ mood và vật lý scene; đừng dùng adjective thừa.
+Khóa DURATION / EDIT GRAMMAR / END FRAME.
+Chạy conflict check: có command nào mâu thuẫn? camera có làm quá nhiều việc? constraints có đủ để giữ continuity?
+# 13. Quy tắc theo độ dài shot
+Thời lượng
+Độ phức tạp khuyến nghị
+Camera
+3–4s
+1 action beat
+1 movement rõ hoặc camera static.
+5–7s
+1–2 action beat
+1 primary movement + optional focus change.
+8–10s
+2–4 action beat
+Camera đơn giản; có thể có move chính + settle/end frame.
+>10s
+Choreography phức tạp hơn
+Có thể chia phase, nhưng phải mô tả thứ tự và điểm chuyển.
+# 14. Negative constraints nên dùng khi nào?
+Character-heavy shot: “no identity drift, no face change, no extra limbs, no duplicate character”.
+Wardrobe/prop continuity: “no outfit change, no prop substitution, keep vehicle color and geometry unchanged”.
+Camera continuity: “no sudden camera jump, no unintended cut, no random zoom”.
+Product shot: “preserve exact product geometry, labels, proportions and material”.
+360/orbit: “the subject does not rotate; only the camera moves”.
+Product explosion: “the human character remains intact; only the product components separate”.
+PHẦN V — VÍ DỤ CHUYỂN SHOT FMV SANG COMMAND-DRIVEN PROMPT
+# 15. Example A — POV từ trong lò nướng
+COMMAND STACK: /pov + /static  |  camera feel: subtle physical vibration
+REFERENCE & CONTINUITY:Preserve the two characters and their wardrobe exactly as the references.SCENE:Rustic wooden kitchen, natural daylight through the window, fine dust visible in the air.SHOT DESIGN:POV from physically inside the oven looking outward. The dark oven-door edges create a natural vignette.ACTION:The male character opens the oven, reaches in with oven gloves and carefully removes the sponge-cake tray. The female character appears behind his shoulder, rises slightly on her toes and peers in with curious excitement.CAMERA:One continuous shot. Keep the camera position inside the oven. Add only subtle physical vibration, slightly stronger at the moment the oven door opens.DURATION / EDIT:10 seconds, no cuts.CONSTRAINTS:Do not move the camera outside the oven. No identity or wardrobe changes.
+# 16. Example B — POV vlog trên bậc thang
+COMMAND STACK: /pov + /handheld + /follow-shot + /push-in
+SHOT DESIGN:First-person POV from the male character following behind her, natural eye height, vlog-like framing.ACTION:0–3s: she runs lightly up the stone stairs.3–5s: she turns back, smiles and waves for the camera to follow.5–8s: she keeps eye contact as the camera closes the distance.8–10s: she leans playfully toward the lens until her face fills the frame.CAMERA:Handheld follow shot with subtle step-driven vertical and lateral movement. From 5s onward, gradually push forward faster. At the final moment the image becomes slightly soft because the subject is extremely close to the lens.EDIT:10-second continuous one-shot, no cuts.
+# 17. Example C — Low-angle cảm xúc từ sàn nhà
+COMMAND STACK: /low-angle + /ground-level + /static + /push-in (very subtle)
+SHOT DESIGN:Camera placed directly on the kitchen floor, looking upward toward the male character sitting alone in the dark corner.ACTION:He sits collapsed inward, head lowered, then begins to cry silently. A lightning flash makes him flinch slightly before he falls back into stillness.CAMERA:Hold the ground-level low angle for the entire shot. If movement is used, make only an extremely slow, almost imperceptible push-in.LIGHTING:Cold blue-gray storm night, mostly dark interior, intermittent white lightning flashes through the window.DURATION:10 seconds, one continuous shot.
+# 18. Example D — Top-down từ trần nhà
+COMMAND STACK: /overhead + /static
+SHOT DESIGN:Perfect top-down overhead view from ceiling height, camera perpendicular to the table and floor. Both characters, the mixing bowl, cake tray and baking tools must remain legible in the composition.ACTION:One character spreads cream while the other decorates the cake. They occasionally exchange a glance and continue working.CAMERA:One continuous locked overhead shot. Optional extremely slow lateral drift only if the engine can preserve the geometry.DURATION:10 seconds, no cuts.
+# 19. Example E — Product commercial one-shot
+COMMAND STACK: /tvcommercial + /hero-cam + /macro
+DIRECTING INTENT:Premium one-shot television commercial, not a montage.SUBJECT:The hero product remains the exact same object throughout the shot.ACTION:The product is placed on a clean surface while a hand performs one simple interaction that reveals its key feature.CAMERA:Begin on a clean hero medium shot, perform one elegant controlled push-in, then settle on a tactile macro detail before returning attention to the hero silhouette without cutting.LIGHTING:Polished commercial lighting with controlled highlights and readable material texture.DURATION / EDIT:8 seconds, single continuous shot, absolutely no cuts.CONSTRAINTS:Preserve exact product geometry, label, color and material. No extra product variants.
+PHẦN VI — THƯ VIỆN 100 COMMAND CHO SHOT BUILDING
+Cách đọc: Type = Atomic / Composite / Macro. “Affects” cho biết command sửa block nào của prompt. “Expansion” là câu tiếng Anh có thể đưa trực tiếp vào prompt khi engine không có native preset. “Ghép / Tránh” là guardrail để tránh command conflict.
+# A. SHOT SIZE / FRAMING
+# / COMMAND
+TYPE
+AFFECTS
+GIẢI THÍCH & KHI DÙNG (VI)
+PROMPT EXPANSION (EN)
+GHÉP TỐT / TRÁNH
+1/establishing
+Atomic
+Shot design
+Cảnh mở đầu rất rộng để giới thiệu địa điểm, không gian và vị trí nhân vật trước khi hành động bắt đầu.
+Very wide establishing shot revealing the full environment before settling on the subject.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+2/extreme-wide
+Atomic
+Shot design
+Cảnh cực rộng, nhân vật rất nhỏ so với môi trường; dùng để nhấn mạnh quy mô, sự cô độc hoặc vẻ hùng vĩ.
+Extreme wide shot; keep the subject small in frame and emphasize the vast surrounding environment.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+3/wide-shot
+Atomic
+Shot design
+Cảnh rộng thấy trọn nhân vật và nhiều phần môi trường xung quanh; phù hợp cho hành động và bố cục không gian.
+Wide shot showing the full subject from head to toe with clear environmental context.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+4/full-shot
+Atomic
+Shot design
+Khung hình thấy trọn cơ thể từ đầu đến chân, nhưng môi trường ít hơn wide shot; tốt để giới thiệu nhân vật hoặc trang phục.
+Full-body shot, head to toe, centered composition, readable body language.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+5/cowboy-shot
+Atomic
+Shot design
+Khung hình từ khoảng giữa đùi trở lên; vẫn thấy được tay và ngôn ngữ cơ thể.
+Cowboy shot from mid-thigh upward, keeping hands and body language visible.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+6/medium-wide
+Atomic
+Shot design
+Khung hình từ khoảng đầu gối trở lên; cân bằng giữa biểu cảm nhân vật và chuyển động cơ thể.
+Medium-wide shot, character framed from around the knees upward with room for movement.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+7/medium-shot
+Atomic
+Shot design
+Khung hình từ eo trở lên; cực kỳ phổ biến cho hội thoại, diễn xuất và video kể chuyện.
+Medium shot from the waist up, natural eye-level composition.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+8/medium-closeup
+Atomic
+Shot design
+Khung hình từ ngực/vai lên đầu; ưu tiên biểu cảm gương mặt nhưng vẫn giữ một ít bối cảnh.
+Medium close-up from chest to head, keeping facial expression dominant while retaining some context.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+9/closeup
+Atomic
+Shot design
+Cận cảnh gương mặt hoặc vật thể quan trọng; dùng để nhấn mạnh cảm xúc, phản ứng hoặc chi tiết.
+Close-up shot; fill the frame with the subject's face while keeping the eyes sharply readable.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+10/extreme-closeup
+Atomic
+Shot design
+Siêu cận vào mắt, môi, tay hoặc một chi tiết nhỏ; tạo cảm giác căng thẳng và tập trung.
+Extreme close-up focused on one precise detail, with very shallow depth of field.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+11/macro
+Atomic
+Shot design
+Cảnh macro phóng rất lớn bề mặt nhỏ như sợi vải, giọt nước, da, kim loại hoặc texture sản phẩm.
+Macro cinematic shot revealing microscopic texture, fibers, droplets and surface detail.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+12/two-shot
+Atomic
+Shot design
+Hai nhân vật cùng xuất hiện trong một khung hình; rất phù hợp cho đối thoại và thể hiện mối quan hệ.
+Balanced two-shot with both characters clearly visible and readable in the same composition.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+13/over-shoulder
+Atomic
+Shot design
+Quay qua vai một nhân vật để nhìn nhân vật còn lại; là góc kinh điển trong cảnh hội thoại.
+Over-the-shoulder shot from behind the foreground character, focusing on the person opposite them.
+GHÉP: `/medium-shot`, `/rack-focus-far`, `/handheld`TRÁNH: `/pov` đồng thời
+14/insert-shot
+Atomic
+Shot design
+Cảnh chèn cận vào một vật hoặc hành động quan trọng như tay mở thư, điện thoại, khóa cửa, chiếc nhẫn.
+Insert shot of the important object/action, tightly framed so the detail is unmistakable.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+15/cutaway
+Atomic
+Shot design
+Cảnh chuyển tạm khỏi hành động chính để cho thấy phản ứng, đồ vật hoặc một chi tiết bổ sung.
+Cutaway shot to a meaningful secondary detail in the scene, then hold long enough to read it.
+GHÉP: 1 angle + 1 movement + 1 rig phù hợpTRÁNH: hai shot size đồng thời; nếu muốn đổi size hãy mô tả transition theo thời gian
+# B. CAMERA ANGLES
+# / COMMAND
+TYPE
+AFFECTS
+GIẢI THÍCH & KHI DÙNG (VI)
+PROMPT EXPANSION (EN)
+GHÉP TỐT / TRÁNH
+16/eye-level
+Atomic
+Shot design
+Camera đặt ngang tầm mắt nhân vật; cho cảm giác trung tính, tự nhiên và chân thực.
+Eye-level camera, neutral perspective, natural proportions.
+GHÉP: 1 framing + 1 movement; khóa vị trí camera cụ thểTRÁNH: góc nhìn đối nghịch đồng thời trừ khi shot chuyển vị trí theo timeline
+17/low-angle
+Atomic
+Shot design
+Camera thấp nhìn lên; khiến nhân vật trông mạnh mẽ, quyền lực hoặc đáng sợ hơn.
+Low-angle shot looking upward at the subject, making the figure feel dominant and imposing.
+GHÉP: `/hero-cam`, `/push-in`, `/wide-angle`TRÁNH: `/high-angle`, `/overhead` đồng thời
+18/high-angle
+Atomic
+Shot design
+Camera cao nhìn xuống; thường làm nhân vật trông nhỏ bé, yếu thế hoặc giúp thấy bố cục không gian.
+High-angle shot looking down on the subject while preserving clear facial readability.
+GHÉP: `/wide-shot`, `/crane-down`, `/static`TRÁNH: `/low-angle` đồng thời
+19/worms-eye
+Atomic
+Shot design
+Camera sát mặt đất nhìn dựng lên; tạo cảm giác cực kỳ hoành tráng hoặc phóng đại chiều cao.
+Worm's-eye view from near ground level, looking steeply upward past the subject.
+GHÉP: 1 framing + 1 movement; khóa vị trí camera cụ thểTRÁNH: góc nhìn đối nghịch đồng thời trừ khi shot chuyển vị trí theo timeline
+20/birds-eye
+Atomic
+Shot design
+Góc nhìn từ rất cao xuống toàn cảnh; giúp thấy đường đi, đội hình và cấu trúc không gian.
+Bird's-eye view from high above, emphasizing patterns, paths and spatial relationships.
+GHÉP: 1 framing + 1 movement; khóa vị trí camera cụ thểTRÁNH: góc nhìn đối nghịch đồng thời trừ khi shot chuyển vị trí theo timeline
+21/overhead
+Atomic
+Shot design
+Camera nhìn thẳng từ trên xuống 90 độ; phù hợp cảnh bàn ăn, vật thể bố trí, choreography hoặc shot đồ họa.
+Perfect overhead top-down shot, camera perpendicular to the ground.
+GHÉP: `/static`, `/pedestal-down`, chuyển động xoay chậm nếu engine hỗ trợTRÁNH: `/low-angle`, `/worms-eye` đồng thời
+22/dutch-angle
+Atomic
+Shot design
+Nghiêng đường chân trời có chủ ý; tạo cảm giác bất ổn, nguy hiểm hoặc tâm lý lệch lạc.
+Dutch-angle composition with the horizon deliberately tilted while the subject remains readable.
+GHÉP: 1 framing + 1 movement; khóa vị trí camera cụ thểTRÁNH: góc nhìn đối nghịch đồng thời trừ khi shot chuyển vị trí theo timeline
+23/profile
+Atomic
+Shot design
+Quay nghiêng 90 độ theo mặt bên của nhân vật; hợp với đi bộ, silhouette hoặc chân dung profile.
+Strict profile view, camera at 90 degrees to the subject.
+GHÉP: 1 framing + 1 movement; khóa vị trí camera cụ thểTRÁNH: góc nhìn đối nghịch đồng thời trừ khi shot chuyển vị trí theo timeline
+24/three-quarter-front
+Atomic
+Shot design
+Góc 3/4 phía trước; thấy rõ khuôn mặt theo chiều sâu và thường đẹp hơn góc thẳng chính diện.
+Three-quarter front angle, showing both facial planes and natural depth.
+GHÉP: 1 framing + 1 movement; khóa vị trí camera cụ thểTRÁNH: góc nhìn đối nghịch đồng thời trừ khi shot chuyển vị trí theo timeline
+25/three-quarter-back
+Atomic
+Shot design
+Góc 3/4 từ phía sau; hay dùng khi nhân vật rời đi, theo dõi hoặc tạo bí ẩn.
+Three-quarter rear view, preserving silhouette and environmental context.
+GHÉP: 1 framing + 1 movement; khóa vị trí camera cụ thểTRÁNH: góc nhìn đối nghịch đồng thời trừ khi shot chuyển vị trí theo timeline
+# C. PERSPECTIVE / CAMERA PLACEMENT
+# / COMMAND
+TYPE
+AFFECTS
+GIẢI THÍCH & KHI DÙNG (VI)
+PROMPT EXPANSION (EN)
+GHÉP TỐT / TRÁNH
+26/pov
+Atomic
+Perspective
+Camera đóng vai đôi mắt của một người trong cảnh; người xem có cảm giác trực tiếp tham gia vào hành động.
+First-person POV at natural eye height with subtle human head movement and realistic walking cadence.
+GHÉP: `/handheld`, `/follow-shot`, `/push-in`, `/wide-angle`TRÁNH: `/over-shoulder` trong cùng khoảnh khắc; hai perspective khác nhau
+27/object-pov
+Atomic
+Perspective
+Camera đặt theo góc nhìn của một đồ vật, ví dụ từ trong hộp, trên xe, trong tủ lạnh hoặc trên sản phẩm.
+Object POV: camera positioned as if it were physically attached to or looking out from the object.
+GHÉP: `/wide-angle`, `/static`, `/push-in`TRÁNH: camera placement mâu thuẫn với vật thể được chọn
+28/ground-level
+Atomic
+Perspective
+Camera rất thấp sát mặt đất; làm nổi bật bước chân, bánh xe và độ sâu tiền cảnh.
+Ground-level camera just above the surface, emphasizing footsteps and foreground parallax.
+GHÉP: 1 framing + 1 movement; khóa vị trí camera cụ thểTRÁNH: góc nhìn đối nghịch đồng thời trừ khi shot chuyển vị trí theo timeline
+29/rear-follow
+Atomic
+Perspective
+Camera bám theo ngay phía sau nhân vật; phù hợp cảnh đi đường, khám phá hoặc tạo hồi hộp.
+Rear-follow shot directly behind the subject, matching their speed and maintaining consistent distance.
+GHÉP: 1 framing + 1 movement; khóa vị trí camera cụ thểTRÁNH: góc nhìn đối nghịch đồng thời trừ khi shot chuyển vị trí theo timeline
+30/aerial
+Atomic
+Perspective
+Góc nhìn cao kiểu drone; giúp đặt nhân vật vào bối cảnh lớn và tạo cảm giác điện ảnh.
+Aerial cinematic view high above the scene, revealing the subject within the larger landscape.
+GHÉP: 1 framing + 1 movement; khóa vị trí camera cụ thểTRÁNH: góc nhìn đối nghịch đồng thời trừ khi shot chuyển vị trí theo timeline
+# D. CAMERA MOVEMENT
+# / COMMAND
+TYPE
+AFFECTS
+GIẢI THÍCH & KHI DÙNG (VI)
+PROMPT EXPANSION (EN)
+GHÉP TỐT / TRÁNH
+31/static
+Atomic
+Camera choreography
+Camera khóa cố định, không pan/tilt/zoom/dolly; chỉ nhân vật hoặc môi trường chuyển động.
+Locked-off camera; position, angle and framing remain completely fixed while only the scene moves.
+GHÉP: `/closeup`, `/overhead`, `/rack-focus-near`TRÁNH: mọi lệnh di chuyển camera đồng thời; nếu camera phải di chuyển thì bỏ `/static` hoặc chia theo trình tự
+32/pan-left
+Atomic
+Camera choreography
+Camera xoay ngang sang trái từ một vị trí cố định; dùng để theo hành động hoặc reveal.
+Smooth pan left from a fixed camera position, ending on a clear final subject.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+33/pan-right
+Atomic
+Camera choreography
+Camera xoay ngang sang phải từ một vị trí cố định; dùng để theo hành động hoặc reveal.
+Smooth pan right from a fixed camera position, ending on a clear final subject.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+34/tilt-up
+Atomic
+Camera choreography
+Camera ngẩng lên theo trục dọc; thường reveal chiều cao, tòa nhà hoặc nhân vật.
+Slow tilt up from the lower anchor to reveal the subject or environment above.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+35/tilt-down
+Atomic
+Camera choreography
+Camera cúi xuống theo trục dọc; reveal hành động hoặc vật thể ở phía dưới.
+Slow tilt down from the upper anchor to reveal the subject or action below.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+36/dolly-in
+Atomic
+Camera choreography
+Camera thật sự tiến gần chủ thể; khác zoom vì có thay đổi phối cảnh và parallax.
+Smooth dolly in toward the subject at constant lens height; no optical zoom, visible natural parallax.
+GHÉP: `/medium-closeup`, `/low-angle`, `/gimbal`TRÁNH: `/static`; nếu đồng thời zoom-out thì gọi rõ `/dolly-zoom-in`
+37/dolly-out
+Atomic
+Camera choreography
+Camera thật sự lùi xa chủ thể; từ từ mở rộng môi trường và tạo cảm giác xa cách.
+Smooth dolly out away from the subject, widening the environment through real perspective change.
+GHÉP: `/wide-shot`, `/pull-back`, `/gimbal`TRÁNH: `/static`; tránh thêm zoom ngược nếu không chủ đích
+38/truck-left
+Atomic
+Camera choreography
+Camera trượt ngang sang trái mà không xoay hướng ống kính; tạo parallax rõ.
+Truck left in a straight lateral path, lens direction locked, strong foreground-to-background parallax.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+39/truck-right
+Atomic
+Camera choreography
+Camera trượt ngang sang phải mà không xoay hướng ống kính; tạo parallax rõ.
+Truck right in a straight lateral path, lens direction locked, strong foreground-to-background parallax.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+40/pedestal-up
+Atomic
+Camera choreography
+Camera nâng thẳng lên theo phương dọc nhưng không tilt; giống thang máy nâng camera.
+Pedestal camera upward while keeping lens orientation unchanged and the subject consistently framed.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+41/pedestal-down
+Atomic
+Camera choreography
+Camera hạ thẳng xuống theo phương dọc nhưng không tilt.
+Pedestal camera downward while keeping lens orientation unchanged.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+42/tracking
+Atomic
+Camera choreography
+Camera di chuyển cùng nhân vật và giữ kích thước nhân vật tương đối ổn định trong khung.
+Smooth tracking shot moving parallel with the subject at matching speed, keeping subject size consistent.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+43/follow-shot
+Atomic
+Camera choreography
+Camera bám theo nhân vật khi nhân vật di chuyển qua không gian.
+Follow shot moving behind and with the subject, maintaining stable distance as they travel.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+44/lead-shot
+Atomic
+Camera choreography
+Camera đi phía trước, quay ngược lại nhân vật đang tiến tới; rất hợp cảnh walk-and-talk.
+Lead tracking shot moving backward in front of the subject while keeping them centered.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+45/chase-shot
+Atomic
+Camera choreography
+Camera đuổi theo chủ thể với năng lượng mạnh; phù hợp cảnh chạy, truy đuổi và hành động.
+Fast chase shot following the moving subject with controlled handheld energy and quick reframing.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+46/arc-left
+Atomic
+Camera choreography
+Camera di chuyển theo cung tròn sang trái quanh chủ thể, thường dưới 180 độ.
+Smooth arc left around the subject on a constant radius, keeping the subject framed.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+47/arc-right
+Atomic
+Camera choreography
+Camera di chuyển theo cung tròn sang phải quanh chủ thể.
+Smooth arc right around the subject on a constant radius, keeping the subject framed.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+48/orbit-180
+Atomic
+Camera choreography
+Camera quay nửa vòng quanh chủ thể; thay đổi rõ góc nhìn và quan hệ không gian.
+Continuous 180-degree orbit around the stationary subject at constant height and radius.
+GHÉP: `/medium-wide`, `/gimbal`, `/rack-focus-*`TRÁNH: movement tuyến tính ngược hướng trong cùng thời điểm
+49/orbit-360(alias: /360)
+Atomic
+Camera choreography
+Camera quay trọn một vòng 360 độ quanh chủ thể; rất hợp hero shot, fashion và product.
+One continuous 360-degree orbit around the stationary subject at constant radius and speed.
+GHÉP: `/full-shot`, `/gimbal`, `/hero-cam`TRÁNH: `/static`, `/lead-shot`, `/rear-follow`; ghi rõ nhân vật đứng yên, camera quay
+50/crane-up
+Atomic
+Camera choreography
+Camera nâng cao dần bằng chuyển động kiểu cần cẩu, đồng thời mở rộng khung cảnh.
+Crane upward smoothly as the frame opens to reveal more of the environment.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+51/crane-down
+Atomic
+Camera choreography
+Camera hạ từ trên cao xuống gần nhân vật; tạo cảm giác đi vào một cảnh.
+Crane downward smoothly from a high view toward the subject, settling into a readable composition.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+52/crane-overhead
+Atomic
+Camera choreography
+Camera đi lên rồi vượt qua chủ thể để chuyển thành góc nhìn trên cao/overhead.
+Crane up and over the subject in one continuous move, transitioning toward an overhead composition.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+53/jib-up
+Atomic
+Camera choreography
+Nâng camera mềm mại ở quãng ngắn; tinh tế hơn crane và thường dùng trong shot nhân vật.
+Gentle jib up from low/eye level, revealing background depth while staying close to the subject.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+54/jib-down
+Atomic
+Camera choreography
+Hạ camera mềm mại ở quãng ngắn, thường dùng để reveal chi tiết phía dưới.
+Gentle jib down toward the subject or foreground detail, maintaining smooth cinematic motion.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+55/push-in
+Atomic
+Camera choreography
+Camera tiến vào chậm, có chủ đích cảm xúc; thường dùng khi nhân vật nhận ra điều gì đó.
+Slow continuous push-in toward the subject, subtle and emotionally motivated.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+56/pull-back
+Atomic
+Camera choreography
+Camera từ từ lùi ra, mở dần bối cảnh; dùng cho cô độc, reveal hoặc kết cảnh.
+Slow pull-back from the subject, gradually exposing more environment and context.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+57/aerial-pullback
+Atomic
+Camera choreography
+Camera bay lùi đồng thời bay lên; nhân vật ngày càng nhỏ trong khung.
+Aerial pullback moving backward and upward in one continuous path while the subject becomes smaller in frame.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+58/drone-orbit
+Atomic
+Camera choreography
+Drone quay vòng quanh nhân vật, xe, tòa nhà hoặc cảnh quan ở độ cao tương đối ổn định.
+Smooth drone orbit around the subject at constant altitude and radius.
+GHÉP: 1 framing + 1 angle + 1 rigTRÁNH: nhiều movement chính chạy cùng lúc; hãy xếp tuần tự nếu cần
+59/fpv-drone
+Composite
+Movement + Rig
+Camera kiểu FPV bay nhanh xuyên qua không gian, lách vật thể và tạo cảm giác nhập vai mạnh.
+FPV drone flight weaving dynamically through the environment with fast but readable forward motion.
+GHÉP: `/wide-angle`, `/flythrough`, environment depthTRÁNH: `/telephoto`, framing quá chặt, đường bay không có khoảng trống
+60/flythrough
+Composite
+Movement + Spatial
+Camera bay xuyên liên tục qua không gian, cửa, hành lang hoặc môi trường 3D để tạo chiều sâu.
+Continuous stabilized fly-through through the environment, passing foreground elements to create strong depth.
+GHÉP: `/wide-angle`, `/gimbal`, `/through-object-in`TRÁNH: scene geometry mơ hồ hoặc quá nhiều vật cản không mô tả
+# E. LENS / ZOOM / FOCUS
+# / COMMAND
+TYPE
+AFFECTS
+GIẢI THÍCH & KHI DÙNG (VI)
+PROMPT EXPANSION (EN)
+GHÉP TỐT / TRÁNH
+61/zoom-in
+Atomic
+Optics / focus
+Zoom quang học vào chủ thể trong khi vị trí camera không đổi; không tạo parallax như dolly.
+Optical zoom in from a locked camera position; no dolly movement and no parallax.
+GHÉP: `/static`, `/closeup`, `/telephoto`TRÁNH: mô tả như dolly nếu camera không thực sự di chuyển
+62/zoom-out
+Atomic
+Optics / focus
+Zoom quang học ra rộng hơn trong khi camera đứng yên.
+Optical zoom out from a locked camera position; widen field of view without moving the camera.
+GHÉP: `/static`, `/wide-shot`TRÁNH: mô tả parallax nếu camera đứng yên
+63/rapid-zoom-in
+Atomic
+Optics / focus
+Zoom nhanh vào một chủ thể hoặc chi tiết; tạo nhịp mạnh, hài hoặc căng thẳng.
+Rapid optical zoom in with a firm stop on the subject.
+GHÉP: camera move đơn giản + framing rõTRÁNH: stack nhiều lens/focus effect gây mất mục tiêu thị giác
+64/rapid-zoom-out
+Atomic
+Optics / focus
+Zoom nhanh ra toàn cảnh để reveal tình huống xung quanh.
+Rapid optical zoom out to expose the wider situation around the subject.
+GHÉP: camera move đơn giản + framing rõTRÁNH: stack nhiều lens/focus effect gây mất mục tiêu thị giác
+65/crash-zoom-in
+Atomic
+Optics / focus
+Zoom vào cực nhanh và dứt khoát; hiệu ứng mạnh kiểu action, retro hoặc comedy.
+Violent crash zoom in over a fraction of a second, landing sharply on the key detail.
+GHÉP: camera move đơn giản + framing rõTRÁNH: stack nhiều lens/focus effect gây mất mục tiêu thị giác
+66/crash-zoom-out
+Atomic
+Optics / focus
+Zoom ra cực nhanh từ chi tiết sang toàn cảnh; thường dùng để tạo bất ngờ.
+Violent crash zoom out from tight detail to wide context with a hard stop.
+GHÉP: camera move đơn giản + framing rõTRÁNH: stack nhiều lens/focus effect gây mất mục tiêu thị giác
+67/dolly-zoom-in
+Atomic
+Optics / focus
+Camera tiến vào đồng thời zoom out để chủ thể giữ kích thước gần như không đổi, nền bị kéo giãn; hiệu ứng Vertigo.
+Dolly forward while zooming out in perfect sync so the subject stays the same size and the background stretches away.
+GHÉP: `/medium-shot`, `/eye-level`, `/steadicam`TRÁNH: thêm một zoom/dolly khác; hiệu ứng phải là move đồng bộ duy nhất
+68/dolly-zoom-out
+Atomic
+Optics / focus
+Camera lùi ra đồng thời zoom in để chủ thể giữ kích thước gần như không đổi, nền bị nén lại.
+Dolly backward while zooming in in perfect sync so subject size stays constant and the background compresses inward.
+GHÉP: `/medium-shot`, `/eye-level`, `/steadicam`TRÁNH: thêm một zoom/dolly khác; hiệu ứng phải là move đồng bộ duy nhất
+69/rack-focus-near
+Atomic
+Optics / focus
+Chuyển nét từ vật ở xa sang vật ở gần mà camera không đổi khung.
+Locked camera; rack focus smoothly from the distant background to the near foreground subject.
+GHÉP: `/static`, `/closeup`, `/over-shoulder`TRÁNH: camera move quá mạnh làm mất ý nghĩa chuyển nét
+70/rack-focus-far
+Atomic
+Optics / focus
+Chuyển nét từ tiền cảnh sang chủ thể phía xa; thường dùng reveal nhân vật hoặc mối đe dọa.
+Locked camera; rack focus smoothly from the near foreground subject to the distant background subject.
+GHÉP: `/static`, `/over-shoulder`, `/telephoto`TRÁNH: camera move quá mạnh làm mất ý nghĩa chuyển nét
+71/follow-focus
+Atomic
+Optics / focus
+Điểm nét bám theo nhân vật đang di chuyển để chủ thể luôn rõ nét.
+Follow focus keeps the moving subject critically sharp while background blur changes naturally.
+GHÉP: camera move đơn giản + framing rõTRÁNH: stack nhiều lens/focus effect gây mất mục tiêu thị giác
+72/snap-focus
+Atomic
+Optics / focus
+Chuyển nét cực nhanh từ chủ thể này sang chủ thể khác.
+Snap focus instantly from the first subject to the second subject while framing stays locked.
+GHÉP: camera move đơn giản + framing rõTRÁNH: stack nhiều lens/focus effect gây mất mục tiêu thị giác
+73/fisheye
+Atomic
+Optics / focus
+Ống kính siêu rộng với méo cong mạnh; tạo cảm giác music video, surreal hoặc POV.
+Extreme fisheye lens with strong barrel distortion and exaggerated near-to-far scale.
+GHÉP: camera move đơn giản + framing rõTRÁNH: stack nhiều lens/focus effect gây mất mục tiêu thị giác
+74/telephoto
+Atomic
+Optics / focus
+Ống kính tiêu cự dài, nén không gian và làm hậu cảnh có cảm giác gần hơn.
+Telephoto lens look with compressed depth, narrow field of view and soft distant background.
+GHÉP: camera move đơn giản + framing rõTRÁNH: stack nhiều lens/focus effect gây mất mục tiêu thị giác
+75/wide-angle
+Atomic
+Optics / focus
+Ống kính góc rộng, nhấn mạnh tiền cảnh và tạo cảm giác không gian sâu, năng động.
+Wide-angle lens with pronounced foreground perspective and deep spatial separation.
+GHÉP: camera move đơn giản + framing rõTRÁNH: stack nhiều lens/focus effect gây mất mục tiêu thị giác
+# F. RIG / CAMERA FEEL
+# / COMMAND
+TYPE
+AFFECTS
+GIẢI THÍCH & KHI DÙNG (VI)
+PROMPT EXPANSION (EN)
+GHÉP TỐT / TRÁNH
+76/handheld
+Atomic
+Rig / feel
+Camera cầm tay có rung nhẹ, breathing và chỉnh khung tự nhiên; tạo cảm giác tài liệu hoặc chân thực.
+Raw handheld camera with subtle breathing, small shakes and organic reframing while always recovering the subject.
+GHÉP: `/pov`, `/follow-shot`, `/closeup`TRÁNH: `/gimbal`, `/steadicam`, `/robot-arm` nếu muốn một rig duy nhất
+77/shoulder-cam
+Atomic
+Rig / feel
+Camera vác vai có quán tính nặng hơn handheld nhỏ; thường thấy trong phim tài liệu, chiến tranh hoặc drama.
+Shoulder-mounted camera with grounded body sway, slightly heavier inertia and documentary realism.
+GHÉP: `/tracking`, `/follow-shot`, `/telephoto`TRÁNH: `/gimbal`, `/robot-arm`
+78/steadicam
+Atomic
+Rig / feel
+Camera ổn định nhưng vẫn có chuyển động cơ thể nhẹ của operator; rất hợp long take.
+Steadicam shot gliding smoothly with the subject, stable but retaining gentle human motion.
+GHÉP: `/tracking`, `/lead-shot`, `/push-in`TRÁNH: `/handheld` thô hoặc `/robot-arm` trong cùng rig
+79/gimbal
+Atomic
+Rig / feel
+Camera chống rung rất mượt, có cảm giác nổi nhẹ; hợp commercial, travel và modern cinematic.
+Gimbal-stabilized movement, floating smoothly through the scene with controlled turns.
+GHÉP: `/tracking`, `/orbit-360`, `/flythrough`TRÁNH: rung handheld mạnh nếu không chủ đích
+80/snorricam
+Composite
+Perspective + Rig
+Camera gắn trực tiếp vào cơ thể nhân vật; nhân vật gần như đứng yên trong khung còn thế giới phía sau chuyển động.
+Body-mounted Snorricam facing the subject; torso and face stay locked in frame while the world moves behind them.
+GHÉP: `/wide-angle`, `/low-shutter`, subject walkingTRÁNH: `/orbit-360` hoặc tracking độc lập; camera đã gắn vào cơ thể
+81/robot-arm
+Atomic
+Rig / feel
+Chuyển động camera cực kỳ chính xác bằng motion-control/robot arm; nổi bật trong product và fashion commercial.
+High-speed motion-control robot arm move with precise repeatable arcs and sharp but perfectly stabilized position changes.
+GHÉP: `/macro`, `/productexplosion`, `/glambot`TRÁNH: rung handheld tự nhiên; robot arm cần quỹ đạo chính xác
+# G. TIME / SPECIALTY
+# / COMMAND
+TYPE
+AFFECTS
+GIẢI THÍCH & KHI DÙNG (VI)
+PROMPT EXPANSION (EN)
+GHÉP TỐT / TRÁNH
+82/bullet-time
+Composite
+Time + Camera
+Khoảnh khắc hành động gần như đóng băng trong khi camera tiếp tục di chuyển quanh chủ thể.
+Bullet-time shot: freeze the subject and suspended particles mid-action while the camera alone orbits smoothly around the moment.
+GHÉP: `/orbit-180`, `/orbit-360`, `/productexplosion`TRÁNH: handheld liên tục hoặc subject motion bình thường; phải nêu rõ phần nào bị đóng băng
+83/hyperlapse
+Composite
+Time + Camera
+Camera di chuyển quãng lớn trong khi thời gian trôi nhanh; thường dùng cho thành phố, travel và chuyển cảnh.
+Hyperlapse moving through the environment as time accelerates and the viewpoint advances rapidly.
+GHÉP: shot design đơn giản để hiệu ứng thời gian đọc rõTRÁNH: quá nhiều camera effect cạnh tranh
+84/timelapse
+Atomic
+Time / specialty
+Thời gian được tua nhanh từ một góc tương đối ổn định; ví dụ ngày sang đêm, mây chạy, đám đông.
+Time-lapse progression showing environmental change over hours while the composition remains controlled.
+GHÉP: shot design đơn giản để hiệu ứng thời gian đọc rõTRÁNH: quá nhiều camera effect cạnh tranh
+85/low-shutter
+Atomic
+Time / specialty
+Dùng cảm giác tốc độ màn trập thấp để tạo motion blur và light streak mạnh.
+Low-shutter cinematic motion with pronounced natural motion blur and light streaks during movement.
+GHÉP: shot design đơn giản để hiệu ứng thời gian đọc rõTRÁNH: quá nhiều camera effect cạnh tranh
+86/whip-pan
+Atomic
+Time / specialty
+Pan cực nhanh tạo motion blur; rất hiệu quả để chuyển cảnh hoặc tăng năng lượng.
+Whip pan rapidly across the scene with strong directional motion blur, landing cleanly on the new subject.
+GHÉP: `/whip-transition`, `/handheld`, `/wide-angle`TRÁNH: rack focus phức tạp trong đúng nhịp whip
+87/camera-roll
+Atomic
+Time / specialty
+Camera xoay quanh trục của ống kính; khiến đường chân trời quay và tạo cảm giác mất phương hướng.
+Controlled camera roll around the optical axis while maintaining subject position.
+GHÉP: shot design đơn giản để hiệu ứng thời gian đọc rõTRÁNH: quá nhiều camera effect cạnh tranh
+89/glambot
+Composite
+Camera + Time + Performance
+Camera sweep tốc độ cao kết hợp slow motion của chủ thể; phong cách fashion/red carpet rất nổi bật.
+Glambot-style high-speed camera sweep around the subject, captured in elegant slow motion with a clean speed ramp.
+GHÉP: `/robot-arm`, `/hero-cam`, slow-motion timingTRÁNH: handheld thô; quá nhiều action beat
+90/hero-cam
+Composite
+Camera + Angle
+Chuyển động làm chủ thể trông mạnh mẽ, thường low-angle + push/rise để kết ở hero composition.
+Hero camera move rising slightly from a low angle while pushing toward the subject for a powerful final composition.
+GHÉP: shot design đơn giản để hiệu ứng thời gian đọc rõTRÁNH: quá nhiều camera effect cạnh tranh
+# H. TRANSITIONS
+# / COMMAND
+TYPE
+AFFECTS
+GIẢI THÍCH & KHI DÙNG (VI)
+PROMPT EXPANSION (EN)
+GHÉP TỐT / TRÁNH
+93/foreground-wipe
+Composite
+Transition + Foreground
+Một vật ở rất gần lens che kín khung hình, tạo wipe tự nhiên để giấu điểm cắt.
+A foreground object passes very close across the lens, filling the frame and creating a natural wipe into the next composition.
+GHÉP: `/tracking`, `/truck-left`, `/truck-right`TRÁNH: foreground không đủ lớn để che toàn frame
+94/whip-transition
+Composite
+Transition + Camera
+Dùng motion blur của whip pan để nối liền hai shot khác nhau.
+Fast whip-pan into full-frame motion blur, transitioning seamlessly into a matching whip-pan in the next scene.
+GHÉP: `/whip-pan`, `/match-move`TRÁNH: `no cuts` nếu transition thực chất nối hai shot
+95/match-move
+Composite
+Transition + Motion
+Nối hai shot bằng cách khớp hướng, tốc độ và vị trí màn hình của chuyển động.
+Match the direction, speed and screen position of the moving subject so the next shot continues the same motion seamlessly.
+GHÉP: shot A/B có cùng hướng và tốc độ chuyển độngTRÁNH: hai shot không khớp screen position hoặc motion vector
+96/occlusion-reveal
+Composite
+Transition + Spatial
+Bắt đầu bị vật tiền cảnh che và từ từ trượt ra để reveal nhân vật/chủ thể.
+Begin fully or partially hidden behind a foreground object, then slide out to reveal the subject in a single smooth move.
+GHÉP: `/truck-left`, `/truck-right`, `/push-in`TRÁNH: foreground không tạo được occlusion rõ ràng
+# I. AI-ENHANCED TRANSITIONS
+# / COMMAND
+TYPE
+AFFECTS
+GIẢI THÍCH & KHI DÙNG (VI)
+PROMPT EXPANSION (EN)
+GHÉP TỐT / TRÁNH
+91/through-object-in
+Atomic
+Transition / spatial
+Hiệu ứng AI cho camera như xuyên qua một vật thể rắn để đi vào không gian phía sau.
+Camera pushes directly through the foreground object as if the lens can pass through solid material, revealing the scene beyond in one seamless move.
+GHÉP: framing đơn giản + constraints rõTRÁNH: stack nhiều macro effect; để AI tự quyết quá nhiều thứ
+92/through-object-out
+Atomic
+Transition / spatial
+Camera lùi/xuyên ngược qua một vật hoặc lỗ mở để reveal không gian rộng hơn.
+Camera pulls backward through the object/opening and emerges into a wider environment in one seamless transition.
+GHÉP: framing đơn giản + constraints rõTRÁNH: stack nhiều macro effect; để AI tự quyết quá nhiều thứ
+# J. AI EFFECTS
+# / COMMAND
+TYPE
+AFFECTS
+GIẢI THÍCH & KHI DÙNG (VI)
+PROMPT EXPANSION (EN)
+GHÉP TỐT / TRÁNH
+88/productexplosion
+Macro
+Object/Props + Effect
+Hiệu ứng exploded-view: các bộ phận của một sản phẩm tách ra có trật tự quanh lõi chính để giải thích cấu tạo, sau đó có thể lắp lại. Chỉ nên áp dụng cho vật thể/sản phẩm, không áp dụng lên cơ thể người.
+Create a clean exploded-view of the product: separate its physical components outward in an organized symmetrical arrangement while preserving exact shape, scale and material, then smoothly reassemble the product.
+GHÉP: `/static`, `/robot-arm`, `/orbit-180`, `/macro`TRÁNH: tháo rời cơ thể người; camera quá hỗn loạn; hình dạng vật thể thay đổi
+97/earth-zoom-out(alias: /earthzoom (zoom-out))
+Macro
+Scale + Transition
+Bắt đầu rất gần nhân vật rồi zoom/pull lên thành phố, quốc gia, lục địa và cuối cùng là Trái Đất.
+Start close on the subject, then pull rapidly upward from street to city to country to continent and finally the full Earth in one seamless scale transition.
+GHÉP: `/establishing`, `/aerial-pullback`TRÁNH: stack thêm `/macrozoom` hoặc nhiều macro effect cùng shot
+98/earth-zoom-in(alias: /earthzoom (zoom-in))
+Macro
+Scale + Transition
+Bắt đầu ngoài không gian rồi lao xuống lục địa, thành phố, đường phố và kết ở đúng nhân vật.
+Start on planet Earth from orbit, descend through clouds to continent, city, street and finally land on the exact subject in one continuous zoom.
+GHÉP: `/aerial`, `/establishing`TRÁNH: stack thêm macro effect khác; phải khóa điểm đáp cuối
+99/macrozoom
+Macro
+Scale + Focus + Camera
+Từ toàn cảnh liên tục tiến vào close-up rồi macro cho đến khi texture cực nhỏ lấp đầy khung.
+Begin on the full subject, then continuously push closer through medium, close-up and macro scale until tiny surface texture fills the frame.
+GHÉP: `/macro`, `/rack-focus-near`, product/fashion detailTRÁNH: `/earth-zoom-*` cùng shot; quá nhiều chuyển động ngang
+# K. AI DIRECTING PRESETS
+# / COMMAND
+TYPE
+AFFECTS
+GIẢI THÍCH & KHI DÙNG (VI)
+PROMPT EXPANSION (EN)
+GHÉP TỐT / TRÁNH
+100/tvcommercial
+Macro
+Directing style + Camera
+Preset định hướng hình ảnh quảng cáo cao cấp: hero action, detail shot, camera mượt và final hero frame.
+Premium television-commercial treatment: concise hero action, polished product/wardrobe details, elegant camera movement, controlled lighting, clean final hero composition.
+GHÉP: `/hero-cam`, `/macro`, `/robot-arm`, product/fashionTRÁNH: `one-shot, no cuts` nếu prompt lại yêu cầu montage; khi cần one-shot phải ghi cứng
+PHẦN VII — SHOT RECIPES, CHECKLIST & TEMPLATE
+# 20. 12 recipe stack dùng nhanh
+Mục tiêu
+Stack
+Ghi chú đạo diễn
+Dialogue tự nhiên
+/medium-shot + /eye-level + /handheld
+Giữ camera đơn giản; tập trung performance và eye-line.
+Reaction cảm xúc
+/closeup + /push-in + /handheld
+Push-in chậm, end frame ở mắt hoặc biểu cảm.
+Hero character
+/full-shot + /low-angle + /hero-cam
+Nhân vật đứng chắc; camera rise/push nhẹ.
+Theo nhân vật đi bộ
+/rear-follow + /tracking + /steadicam
+Giữ distance và size chủ thể ổn định.
+Walk-and-talk
+/lead-shot + /medium-wide + /gimbal
+Camera đi lùi trước nhân vật, tránh đổi tốc độ bất ngờ.
+Reveal từ vật tiền cảnh
+/occlusion-reveal + /truck-right
+Dùng cột/cửa/lá cây để che frame đầu.
+Product hero
+/macro + /robot-arm + /hero-cam
+Geometry sản phẩm phải khóa cứng.
+Fashion reveal
+/full-shot + /glambot
+Ít action beat; ưu tiên garment motion và speed ramp.
+Tension realization
+/medium-closeup + /dolly-zoom-in
+Giữ subject size gần như cố định, nền kéo giãn.
+Epic scene ending
+/aerial-pullback + /extreme-wide
+Bay lùi + lên, subject nhỏ dần trong landscape.
+Scale transition
+/earth-zoom-out
+Khóa chính xác start subject và các scale step.
+Texture transition
+/macrozoom
+Toàn cảnh → close-up → macro, không đổi geometry chủ thể.
+# 21. Checklist trước khi render một shot
+☐  STORY: Shot này kể đúng một beat rõ ràng chưa?
+☐  CONTINUITY: Face / wardrobe / props / vehicle / environment nào phải giữ nguyên?
+☐  SPATIAL: Camera đang ở vị trí vật lý nào?
+☐  FRAMING: Shot size và angle có phục vụ cảm xúc không?
+☐  ACTION: Nhân vật có quá nhiều hành động trong thời lượng không?
+☐  CAMERA: Có đúng một primary camera job không?
+☐  COMMAND CONFLICT: Có static + movement, handheld + gimbal, POV + OTS… không?
+☐  TIMING: Có cần timestamp? Có ghi duration và one-shot/cuts không?
+☐  END FRAME: Shot kết ở composition nào?
+☐  CONSTRAINTS: Có khóa những lỗi AI dễ gây ra không?
+# 22. Template ngắn — khi shot đơn giản
+COMMANDS: /[framing] + /[angle] + /[movement]Use the reference as the exact identity and keep continuity unchanged.SCENE: [where / time / atmosphere]SHOT: [camera placement + framing + angle]ACTION: [one clear subject action]CAMERA: [one primary movement + speed + direction]END FRAME: [final composition]DURATION: [Xs], [one-shot / cuts]CONSTRAINTS: [identity / wardrobe / geometry / no extra subjects]
+# 23. Template đầy đủ — khi shot phức tạp
+COMMAND STACK:PRIMARY VIEW: /...FRAMING: /...ANGLE: /...MOVEMENT: /...RIG: /...OPTICS / EFFECT: /...REFERENCE & CONTINUITY:...SCENE / ENVIRONMENT:...SUBJECT / PROPS / VEHICLE:...SHOT DESIGN:...ACTION / PERFORMANCE:0–...s: ......–...s: ...CAMERA CHOREOGRAPHY:...OPTICS / FOCUS:...LIGHTING / COLOR / ATMOSPHERE:...SOUND:...DURATION / EDIT:...END FRAME:...HARD CONSTRAINTS:...
+# 24. Kết luận hệ thống
+Một shot tốt không đến từ việc “stack thật nhiều command”. Story beat quyết định shot; shot design quyết định camera; command chỉ làm ý đồ đó rõ và tái sử dụng được. Hệ thống tối ưu là: STORY BRIEF → COMMAND STACK → NATURAL-LANGUAGE EXPANSION → CONSTRAINT CHECK → RENDER & ITERATE.
+— END OF HANDBOOK —

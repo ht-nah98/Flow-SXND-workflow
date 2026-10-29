@@ -1,0 +1,1382 @@
+[
+ {
+  "num": 1,
+  "id": "establishing",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Cảnh mở đầu rất rộng để giới thiệu địa điểm, không gian và vị trí nhân vật trước khi hành động bắt đầu.",
+  "expansion_en": "Very wide establishing shot revealing the full environment before settling on the subject.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 2,
+  "id": "extreme-wide",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Cảnh cực rộng, nhân vật rất nhỏ so với môi trường; dùng để nhấn mạnh quy mô, sự cô độc hoặc vẻ hùng vĩ.",
+  "expansion_en": "Extreme wide shot; keep the subject small in frame and emphasize the vast surrounding environment.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 3,
+  "id": "wide-shot",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Cảnh rộng thấy trọn nhân vật và nhiều phần môi trường xung quanh; phù hợp cho hành động và bố cục không gian.",
+  "expansion_en": "Wide shot showing the full subject from head to toe with clear environmental context.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 4,
+  "id": "full-shot",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Khung hình thấy trọn cơ thể từ đầu đến chân, nhưng môi trường ít hơn wide shot; tốt để giới thiệu nhân vật hoặc trang phục.",
+  "expansion_en": "Full-body shot, head to toe, centered composition, readable body language.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 5,
+  "id": "cowboy-shot",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Khung hình từ khoảng giữa đùi trở lên; vẫn thấy được tay và ngôn ngữ cơ thể.",
+  "expansion_en": "Cowboy shot from mid-thigh upward, keeping hands and body language visible.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 6,
+  "id": "medium-wide",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Khung hình từ khoảng đầu gối trở lên; cân bằng giữa biểu cảm nhân vật và chuyển động cơ thể.",
+  "expansion_en": "Medium-wide shot, character framed from around the knees upward with room for movement.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 7,
+  "id": "medium-shot",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Khung hình từ eo trở lên; cực kỳ phổ biến cho hội thoại, diễn xuất và video kể chuyện.",
+  "expansion_en": "Medium shot from the waist up, natural eye-level composition.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 8,
+  "id": "medium-closeup",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Khung hình từ ngực/vai lên đầu; ưu tiên biểu cảm gương mặt nhưng vẫn giữ một ít bối cảnh.",
+  "expansion_en": "Medium close-up from chest to head, keeping facial expression dominant while retaining some context.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 9,
+  "id": "closeup",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Cận cảnh gương mặt hoặc vật thể quan trọng; dùng để nhấn mạnh cảm xúc, phản ứng hoặc chi tiết.",
+  "expansion_en": "Close-up shot; fill the frame with the subject's face while keeping the eyes sharply readable.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 10,
+  "id": "extreme-closeup",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Siêu cận vào mắt, môi, tay hoặc một chi tiết nhỏ; tạo cảm giác căng thẳng và tập trung.",
+  "expansion_en": "Extreme close-up focused on one precise detail, with very shallow depth of field.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 11,
+  "id": "macro",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Cảnh macro phóng rất lớn bề mặt nhỏ như sợi vải, giọt nước, da, kim loại hoặc texture sản phẩm.",
+  "expansion_en": "Macro cinematic shot revealing microscopic texture, fibers, droplets and surface detail.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 12,
+  "id": "two-shot",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Hai nhân vật cùng xuất hiện trong một khung hình; rất phù hợp cho đối thoại và thể hiện mối quan hệ.",
+  "expansion_en": "Balanced two-shot with both characters clearly visible and readable in the same composition.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 13,
+  "id": "over-shoulder",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Quay qua vai một nhân vật để nhìn nhân vật còn lại; là góc kinh điển trong cảnh hội thoại.",
+  "expansion_en": "Over-the-shoulder shot from behind the foreground character, focusing on the person opposite them.",
+  "pairs_with": [
+   "handheld",
+   "medium-shot",
+   "rack-focus-far"
+  ],
+  "avoid": [
+   "pov"
+  ]
+ },
+ {
+  "num": 14,
+  "id": "insert-shot",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Cảnh chèn cận vào một vật hoặc hành động quan trọng như tay mở thư, điện thoại, khóa cửa, chiếc nhẫn.",
+  "expansion_en": "Insert shot of the important object/action, tightly framed so the detail is unmistakable.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 15,
+  "id": "cutaway",
+  "aliases": [],
+  "type": "atomic",
+  "group": "framing",
+  "affects": "Shot design",
+  "explain_vi": "Cảnh chuyển tạm khỏi hành động chính để cho thấy phản ứng, đồ vật hoặc một chi tiết bổ sung.",
+  "expansion_en": "Cutaway shot to a meaningful secondary detail in the scene, then hold long enough to read it.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 16,
+  "id": "eye-level",
+  "aliases": [],
+  "type": "atomic",
+  "group": "angle",
+  "affects": "Shot design",
+  "explain_vi": "Camera đặt ngang tầm mắt nhân vật; cho cảm giác trung tính, tự nhiên và chân thực.",
+  "expansion_en": "Eye-level camera, neutral perspective, natural proportions.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 17,
+  "id": "low-angle",
+  "aliases": [],
+  "type": "atomic",
+  "group": "angle",
+  "affects": "Shot design",
+  "explain_vi": "Camera thấp nhìn lên; khiến nhân vật trông mạnh mẽ, quyền lực hoặc đáng sợ hơn.",
+  "expansion_en": "Low-angle shot looking upward at the subject, making the figure feel dominant and imposing.",
+  "pairs_with": [
+   "hero-cam",
+   "push-in",
+   "wide-angle"
+  ],
+  "avoid": [
+   "high-angle",
+   "overhead"
+  ]
+ },
+ {
+  "num": 18,
+  "id": "high-angle",
+  "aliases": [],
+  "type": "atomic",
+  "group": "angle",
+  "affects": "Shot design",
+  "explain_vi": "Camera cao nhìn xuống; thường làm nhân vật trông nhỏ bé, yếu thế hoặc giúp thấy bố cục không gian.",
+  "expansion_en": "High-angle shot looking down on the subject while preserving clear facial readability.",
+  "pairs_with": [
+   "crane-down",
+   "static",
+   "wide-shot"
+  ],
+  "avoid": [
+   "low-angle"
+  ]
+ },
+ {
+  "num": 19,
+  "id": "worms-eye",
+  "aliases": [],
+  "type": "atomic",
+  "group": "angle",
+  "affects": "Shot design",
+  "explain_vi": "Camera sát mặt đất nhìn dựng lên; tạo cảm giác cực kỳ hoành tráng hoặc phóng đại chiều cao.",
+  "expansion_en": "Worm's-eye view from near ground level, looking steeply upward past the subject.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 20,
+  "id": "birds-eye",
+  "aliases": [],
+  "type": "atomic",
+  "group": "angle",
+  "affects": "Shot design",
+  "explain_vi": "Góc nhìn từ rất cao xuống toàn cảnh; giúp thấy đường đi, đội hình và cấu trúc không gian.",
+  "expansion_en": "Bird's-eye view from high above, emphasizing patterns, paths and spatial relationships.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 21,
+  "id": "overhead",
+  "aliases": [],
+  "type": "atomic",
+  "group": "angle",
+  "affects": "Shot design",
+  "explain_vi": "Camera nhìn thẳng từ trên xuống 90 độ; phù hợp cảnh bàn ăn, vật thể bố trí, choreography hoặc shot đồ họa.",
+  "expansion_en": "Perfect overhead top-down shot, camera perpendicular to the ground.",
+  "pairs_with": [
+   "pedestal-down",
+   "static"
+  ],
+  "avoid": [
+   "low-angle",
+   "worms-eye"
+  ]
+ },
+ {
+  "num": 22,
+  "id": "dutch-angle",
+  "aliases": [],
+  "type": "atomic",
+  "group": "angle",
+  "affects": "Shot design",
+  "explain_vi": "Nghiêng đường chân trời có chủ ý; tạo cảm giác bất ổn, nguy hiểm hoặc tâm lý lệch lạc.",
+  "expansion_en": "Dutch-angle composition with the horizon deliberately tilted while the subject remains readable.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 23,
+  "id": "profile",
+  "aliases": [],
+  "type": "atomic",
+  "group": "angle",
+  "affects": "Shot design",
+  "explain_vi": "Quay nghiêng 90 độ theo mặt bên của nhân vật; hợp với đi bộ, silhouette hoặc chân dung profile.",
+  "expansion_en": "Strict profile view, camera at 90 degrees to the subject.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 24,
+  "id": "three-quarter-front",
+  "aliases": [],
+  "type": "atomic",
+  "group": "angle",
+  "affects": "Shot design",
+  "explain_vi": "Góc 3/4 phía trước; thấy rõ khuôn mặt theo chiều sâu và thường đẹp hơn góc thẳng chính diện.",
+  "expansion_en": "Three-quarter front angle, showing both facial planes and natural depth.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 25,
+  "id": "three-quarter-back",
+  "aliases": [],
+  "type": "atomic",
+  "group": "angle",
+  "affects": "Shot design",
+  "explain_vi": "Góc 3/4 từ phía sau; hay dùng khi nhân vật rời đi, theo dõi hoặc tạo bí ẩn.",
+  "expansion_en": "Three-quarter rear view, preserving silhouette and environmental context.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 26,
+  "id": "pov",
+  "aliases": [],
+  "type": "atomic",
+  "group": "perspective",
+  "affects": "Perspective",
+  "explain_vi": "Camera đóng vai đôi mắt của một người trong cảnh; người xem có cảm giác trực tiếp tham gia vào hành động.",
+  "expansion_en": "First-person POV at natural eye height with subtle human head movement and realistic walking cadence.",
+  "pairs_with": [
+   "follow-shot",
+   "handheld",
+   "push-in",
+   "wide-angle"
+  ],
+  "avoid": [
+   "over-shoulder"
+  ]
+ },
+ {
+  "num": 27,
+  "id": "object-pov",
+  "aliases": [],
+  "type": "atomic",
+  "group": "perspective",
+  "affects": "Perspective",
+  "explain_vi": "Camera đặt theo góc nhìn của một đồ vật, ví dụ từ trong hộp, trên xe, trong tủ lạnh hoặc trên sản phẩm.",
+  "expansion_en": "Object POV: camera positioned as if it were physically attached to or looking out from the object.",
+  "pairs_with": [
+   "push-in",
+   "static",
+   "wide-angle"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 28,
+  "id": "ground-level",
+  "aliases": [],
+  "type": "atomic",
+  "group": "perspective",
+  "affects": "Perspective",
+  "explain_vi": "Camera rất thấp sát mặt đất; làm nổi bật bước chân, bánh xe và độ sâu tiền cảnh.",
+  "expansion_en": "Ground-level camera just above the surface, emphasizing footsteps and foreground parallax.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 29,
+  "id": "rear-follow",
+  "aliases": [],
+  "type": "atomic",
+  "group": "perspective",
+  "affects": "Perspective",
+  "explain_vi": "Camera bám theo ngay phía sau nhân vật; phù hợp cảnh đi đường, khám phá hoặc tạo hồi hộp.",
+  "expansion_en": "Rear-follow shot directly behind the subject, matching their speed and maintaining consistent distance.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 30,
+  "id": "aerial",
+  "aliases": [],
+  "type": "atomic",
+  "group": "perspective",
+  "affects": "Perspective",
+  "explain_vi": "Góc nhìn cao kiểu drone; giúp đặt nhân vật vào bối cảnh lớn và tạo cảm giác điện ảnh.",
+  "expansion_en": "Aerial cinematic view high above the scene, revealing the subject within the larger landscape.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 31,
+  "id": "static",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera khóa cố định, không pan/tilt/zoom/dolly; chỉ nhân vật hoặc môi trường chuyển động.",
+  "expansion_en": "Locked-off camera; position, angle and framing remain completely fixed while only the scene moves.",
+  "pairs_with": [
+   "closeup",
+   "overhead",
+   "rack-focus-near"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 32,
+  "id": "pan-left",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera xoay ngang sang trái từ một vị trí cố định; dùng để theo hành động hoặc reveal.",
+  "expansion_en": "Smooth pan left from a fixed camera position, ending on a clear final subject.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 33,
+  "id": "pan-right",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera xoay ngang sang phải từ một vị trí cố định; dùng để theo hành động hoặc reveal.",
+  "expansion_en": "Smooth pan right from a fixed camera position, ending on a clear final subject.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 34,
+  "id": "tilt-up",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera ngẩng lên theo trục dọc; thường reveal chiều cao, tòa nhà hoặc nhân vật.",
+  "expansion_en": "Slow tilt up from the lower anchor to reveal the subject or environment above.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 35,
+  "id": "tilt-down",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera cúi xuống theo trục dọc; reveal hành động hoặc vật thể ở phía dưới.",
+  "expansion_en": "Slow tilt down from the upper anchor to reveal the subject or action below.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 36,
+  "id": "dolly-in",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera thật sự tiến gần chủ thể; khác zoom vì có thay đổi phối cảnh và parallax.",
+  "expansion_en": "Smooth dolly in toward the subject at constant lens height; no optical zoom, visible natural parallax.",
+  "pairs_with": [
+   "gimbal",
+   "low-angle",
+   "medium-closeup"
+  ],
+  "avoid": [
+   "dolly-zoom-in",
+   "static"
+  ]
+ },
+ {
+  "num": 37,
+  "id": "dolly-out",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera thật sự lùi xa chủ thể; từ từ mở rộng môi trường và tạo cảm giác xa cách.",
+  "expansion_en": "Smooth dolly out away from the subject, widening the environment through real perspective change.",
+  "pairs_with": [
+   "gimbal",
+   "pull-back",
+   "wide-shot"
+  ],
+  "avoid": [
+   "static"
+  ]
+ },
+ {
+  "num": 38,
+  "id": "truck-left",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera trượt ngang sang trái mà không xoay hướng ống kính; tạo parallax rõ.",
+  "expansion_en": "Truck left in a straight lateral path, lens direction locked, strong foreground-to-background parallax.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 39,
+  "id": "truck-right",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera trượt ngang sang phải mà không xoay hướng ống kính; tạo parallax rõ.",
+  "expansion_en": "Truck right in a straight lateral path, lens direction locked, strong foreground-to-background parallax.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 40,
+  "id": "pedestal-up",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera nâng thẳng lên theo phương dọc nhưng không tilt; giống thang máy nâng camera.",
+  "expansion_en": "Pedestal camera upward while keeping lens orientation unchanged and the subject consistently framed.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 41,
+  "id": "pedestal-down",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera hạ thẳng xuống theo phương dọc nhưng không tilt.",
+  "expansion_en": "Pedestal camera downward while keeping lens orientation unchanged.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 42,
+  "id": "tracking",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera di chuyển cùng nhân vật và giữ kích thước nhân vật tương đối ổn định trong khung.",
+  "expansion_en": "Smooth tracking shot moving parallel with the subject at matching speed, keeping subject size consistent.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 43,
+  "id": "follow-shot",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera bám theo nhân vật khi nhân vật di chuyển qua không gian.",
+  "expansion_en": "Follow shot moving behind and with the subject, maintaining stable distance as they travel.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 44,
+  "id": "lead-shot",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera đi phía trước, quay ngược lại nhân vật đang tiến tới; rất hợp cảnh walk-and-talk.",
+  "expansion_en": "Lead tracking shot moving backward in front of the subject while keeping them centered.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 45,
+  "id": "chase-shot",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera đuổi theo chủ thể với năng lượng mạnh; phù hợp cảnh chạy, truy đuổi và hành động.",
+  "expansion_en": "Fast chase shot following the moving subject with controlled handheld energy and quick reframing.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 46,
+  "id": "arc-left",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera di chuyển theo cung tròn sang trái quanh chủ thể, thường dưới 180 độ.",
+  "expansion_en": "Smooth arc left around the subject on a constant radius, keeping the subject framed.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 47,
+  "id": "arc-right",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera di chuyển theo cung tròn sang phải quanh chủ thể.",
+  "expansion_en": "Smooth arc right around the subject on a constant radius, keeping the subject framed.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 48,
+  "id": "orbit-180",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera quay nửa vòng quanh chủ thể; thay đổi rõ góc nhìn và quan hệ không gian.",
+  "expansion_en": "Continuous 180-degree orbit around the stationary subject at constant height and radius.",
+  "pairs_with": [
+   "gimbal",
+   "medium-wide",
+   "rack-focus-far",
+   "rack-focus-near"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 49,
+  "id": "orbit-360",
+  "aliases": [
+   "360"
+  ],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera quay trọn một vòng 360 độ quanh chủ thể; rất hợp hero shot, fashion và product.",
+  "expansion_en": "One continuous 360-degree orbit around the stationary subject at constant radius and speed.",
+  "pairs_with": [
+   "full-shot",
+   "gimbal",
+   "hero-cam"
+  ],
+  "avoid": [
+   "lead-shot",
+   "rear-follow",
+   "static"
+  ]
+ },
+ {
+  "num": 50,
+  "id": "crane-up",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera nâng cao dần bằng chuyển động kiểu cần cẩu, đồng thời mở rộng khung cảnh.",
+  "expansion_en": "Crane upward smoothly as the frame opens to reveal more of the environment.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 51,
+  "id": "crane-down",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera hạ từ trên cao xuống gần nhân vật; tạo cảm giác đi vào một cảnh.",
+  "expansion_en": "Crane downward smoothly from a high view toward the subject, settling into a readable composition.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 52,
+  "id": "crane-overhead",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera đi lên rồi vượt qua chủ thể để chuyển thành góc nhìn trên cao/overhead.",
+  "expansion_en": "Crane up and over the subject in one continuous move, transitioning toward an overhead composition.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 53,
+  "id": "jib-up",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Nâng camera mềm mại ở quãng ngắn; tinh tế hơn crane và thường dùng trong shot nhân vật.",
+  "expansion_en": "Gentle jib up from low/eye level, revealing background depth while staying close to the subject.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 54,
+  "id": "jib-down",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Hạ camera mềm mại ở quãng ngắn, thường dùng để reveal chi tiết phía dưới.",
+  "expansion_en": "Gentle jib down toward the subject or foreground detail, maintaining smooth cinematic motion.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 55,
+  "id": "push-in",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera tiến vào chậm, có chủ đích cảm xúc; thường dùng khi nhân vật nhận ra điều gì đó.",
+  "expansion_en": "Slow continuous push-in toward the subject, subtle and emotionally motivated.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 56,
+  "id": "pull-back",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera từ từ lùi ra, mở dần bối cảnh; dùng cho cô độc, reveal hoặc kết cảnh.",
+  "expansion_en": "Slow pull-back from the subject, gradually exposing more environment and context.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 57,
+  "id": "aerial-pullback",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Camera bay lùi đồng thời bay lên; nhân vật ngày càng nhỏ trong khung.",
+  "expansion_en": "Aerial pullback moving backward and upward in one continuous path while the subject becomes smaller in frame.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 58,
+  "id": "drone-orbit",
+  "aliases": [],
+  "type": "atomic",
+  "group": "movement",
+  "affects": "Camera choreography",
+  "explain_vi": "Drone quay vòng quanh nhân vật, xe, tòa nhà hoặc cảnh quan ở độ cao tương đối ổn định.",
+  "expansion_en": "Smooth drone orbit around the subject at constant altitude and radius.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 59,
+  "id": "fpv-drone",
+  "aliases": [],
+  "type": "composite",
+  "group": "movement",
+  "affects": "Movement + Rig",
+  "explain_vi": "Camera kiểu FPV bay nhanh xuyên qua không gian, lách vật thể và tạo cảm giác nhập vai mạnh.",
+  "expansion_en": "FPV drone flight weaving dynamically through the environment with fast but readable forward motion.",
+  "pairs_with": [
+   "flythrough",
+   "wide-angle"
+  ],
+  "avoid": [
+   "telephoto"
+  ]
+ },
+ {
+  "num": 60,
+  "id": "flythrough",
+  "aliases": [],
+  "type": "composite",
+  "group": "movement",
+  "affects": "Movement + Spatial",
+  "explain_vi": "Camera bay xuyên liên tục qua không gian, cửa, hành lang hoặc môi trường 3D để tạo chiều sâu.",
+  "expansion_en": "Continuous stabilized fly-through through the environment, passing foreground elements to create strong depth.",
+  "pairs_with": [
+   "gimbal",
+   "through-object-in",
+   "wide-angle"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 61,
+  "id": "zoom-in",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Zoom quang học vào chủ thể trong khi vị trí camera không đổi; không tạo parallax như dolly.",
+  "expansion_en": "Optical zoom in from a locked camera position; no dolly movement and no parallax.",
+  "pairs_with": [
+   "closeup",
+   "static",
+   "telephoto"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 62,
+  "id": "zoom-out",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Zoom quang học ra rộng hơn trong khi camera đứng yên.",
+  "expansion_en": "Optical zoom out from a locked camera position; widen field of view without moving the camera.",
+  "pairs_with": [
+   "static",
+   "wide-shot"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 63,
+  "id": "rapid-zoom-in",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Zoom nhanh vào một chủ thể hoặc chi tiết; tạo nhịp mạnh, hài hoặc căng thẳng.",
+  "expansion_en": "Rapid optical zoom in with a firm stop on the subject.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 64,
+  "id": "rapid-zoom-out",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Zoom nhanh ra toàn cảnh để reveal tình huống xung quanh.",
+  "expansion_en": "Rapid optical zoom out to expose the wider situation around the subject.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 65,
+  "id": "crash-zoom-in",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Zoom vào cực nhanh và dứt khoát; hiệu ứng mạnh kiểu action, retro hoặc comedy.",
+  "expansion_en": "Violent crash zoom in over a fraction of a second, landing sharply on the key detail.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 66,
+  "id": "crash-zoom-out",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Zoom ra cực nhanh từ chi tiết sang toàn cảnh; thường dùng để tạo bất ngờ.",
+  "expansion_en": "Violent crash zoom out from tight detail to wide context with a hard stop.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 67,
+  "id": "dolly-zoom-in",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Camera tiến vào đồng thời zoom out để chủ thể giữ kích thước gần như không đổi, nền bị kéo giãn; hiệu ứng Vertigo.",
+  "expansion_en": "Dolly forward while zooming out in perfect sync so the subject stays the same size and the background stretches away.",
+  "pairs_with": [
+   "eye-level",
+   "medium-shot",
+   "steadicam"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 68,
+  "id": "dolly-zoom-out",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Camera lùi ra đồng thời zoom in để chủ thể giữ kích thước gần như không đổi, nền bị nén lại.",
+  "expansion_en": "Dolly backward while zooming in in perfect sync so subject size stays constant and the background compresses inward.",
+  "pairs_with": [
+   "eye-level",
+   "medium-shot",
+   "steadicam"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 69,
+  "id": "rack-focus-near",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Chuyển nét từ vật ở xa sang vật ở gần mà camera không đổi khung.",
+  "expansion_en": "Locked camera; rack focus smoothly from the distant background to the near foreground subject.",
+  "pairs_with": [
+   "closeup",
+   "over-shoulder",
+   "static"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 70,
+  "id": "rack-focus-far",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Chuyển nét từ tiền cảnh sang chủ thể phía xa; thường dùng reveal nhân vật hoặc mối đe dọa.",
+  "expansion_en": "Locked camera; rack focus smoothly from the near foreground subject to the distant background subject.",
+  "pairs_with": [
+   "over-shoulder",
+   "static",
+   "telephoto"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 71,
+  "id": "follow-focus",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Điểm nét bám theo nhân vật đang di chuyển để chủ thể luôn rõ nét.",
+  "expansion_en": "Follow focus keeps the moving subject critically sharp while background blur changes naturally.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 72,
+  "id": "snap-focus",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Chuyển nét cực nhanh từ chủ thể này sang chủ thể khác.",
+  "expansion_en": "Snap focus instantly from the first subject to the second subject while framing stays locked.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 73,
+  "id": "fisheye",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Ống kính siêu rộng với méo cong mạnh; tạo cảm giác music video, surreal hoặc POV.",
+  "expansion_en": "Extreme fisheye lens with strong barrel distortion and exaggerated near-to-far scale.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 74,
+  "id": "telephoto",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Ống kính tiêu cự dài, nén không gian và làm hậu cảnh có cảm giác gần hơn.",
+  "expansion_en": "Telephoto lens look with compressed depth, narrow field of view and soft distant background.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 75,
+  "id": "wide-angle",
+  "aliases": [],
+  "type": "atomic",
+  "group": "optics",
+  "affects": "Optics / focus",
+  "explain_vi": "Ống kính góc rộng, nhấn mạnh tiền cảnh và tạo cảm giác không gian sâu, năng động.",
+  "expansion_en": "Wide-angle lens with pronounced foreground perspective and deep spatial separation.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 76,
+  "id": "handheld",
+  "aliases": [],
+  "type": "atomic",
+  "group": "rig",
+  "affects": "Rig / feel",
+  "explain_vi": "Camera cầm tay có rung nhẹ, breathing và chỉnh khung tự nhiên; tạo cảm giác tài liệu hoặc chân thực.",
+  "expansion_en": "Raw handheld camera with subtle breathing, small shakes and organic reframing while always recovering the subject.",
+  "pairs_with": [
+   "closeup",
+   "follow-shot",
+   "pov"
+  ],
+  "avoid": [
+   "gimbal",
+   "robot-arm",
+   "steadicam"
+  ]
+ },
+ {
+  "num": 77,
+  "id": "shoulder-cam",
+  "aliases": [],
+  "type": "atomic",
+  "group": "rig",
+  "affects": "Rig / feel",
+  "explain_vi": "Camera vác vai có quán tính nặng hơn handheld nhỏ; thường thấy trong phim tài liệu, chiến tranh hoặc drama.",
+  "expansion_en": "Shoulder-mounted camera with grounded body sway, slightly heavier inertia and documentary realism.",
+  "pairs_with": [
+   "follow-shot",
+   "telephoto",
+   "tracking"
+  ],
+  "avoid": [
+   "gimbal",
+   "robot-arm"
+  ]
+ },
+ {
+  "num": 78,
+  "id": "steadicam",
+  "aliases": [],
+  "type": "atomic",
+  "group": "rig",
+  "affects": "Rig / feel",
+  "explain_vi": "Camera ổn định nhưng vẫn có chuyển động cơ thể nhẹ của operator; rất hợp long take.",
+  "expansion_en": "Steadicam shot gliding smoothly with the subject, stable but retaining gentle human motion.",
+  "pairs_with": [
+   "lead-shot",
+   "push-in",
+   "tracking"
+  ],
+  "avoid": [
+   "handheld",
+   "robot-arm"
+  ]
+ },
+ {
+  "num": 79,
+  "id": "gimbal",
+  "aliases": [],
+  "type": "atomic",
+  "group": "rig",
+  "affects": "Rig / feel",
+  "explain_vi": "Camera chống rung rất mượt, có cảm giác nổi nhẹ; hợp commercial, travel và modern cinematic.",
+  "expansion_en": "Gimbal-stabilized movement, floating smoothly through the scene with controlled turns.",
+  "pairs_with": [
+   "flythrough",
+   "orbit-360",
+   "tracking"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 80,
+  "id": "snorricam",
+  "aliases": [],
+  "type": "composite",
+  "group": "rig",
+  "affects": "Perspective + Rig",
+  "explain_vi": "Camera gắn trực tiếp vào cơ thể nhân vật; nhân vật gần như đứng yên trong khung còn thế giới phía sau chuyển động.",
+  "expansion_en": "Body-mounted Snorricam facing the subject; torso and face stay locked in frame while the world moves behind them.",
+  "pairs_with": [
+   "low-shutter",
+   "wide-angle"
+  ],
+  "avoid": [
+   "orbit-360"
+  ]
+ },
+ {
+  "num": 81,
+  "id": "robot-arm",
+  "aliases": [],
+  "type": "atomic",
+  "group": "rig",
+  "affects": "Rig / feel",
+  "explain_vi": "Chuyển động camera cực kỳ chính xác bằng motion-control/robot arm; nổi bật trong product và fashion commercial.",
+  "expansion_en": "High-speed motion-control robot arm move with precise repeatable arcs and sharp but perfectly stabilized position changes.",
+  "pairs_with": [
+   "glambot",
+   "macro",
+   "productexplosion"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 82,
+  "id": "bullet-time",
+  "aliases": [],
+  "type": "composite",
+  "group": "time",
+  "affects": "Time + Camera",
+  "explain_vi": "Khoảnh khắc hành động gần như đóng băng trong khi camera tiếp tục di chuyển quanh chủ thể.",
+  "expansion_en": "Bullet-time shot: freeze the subject and suspended particles mid-action while the camera alone orbits smoothly around the moment.",
+  "pairs_with": [
+   "orbit-180",
+   "orbit-360",
+   "productexplosion"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 83,
+  "id": "hyperlapse",
+  "aliases": [],
+  "type": "composite",
+  "group": "time",
+  "affects": "Time + Camera",
+  "explain_vi": "Camera di chuyển quãng lớn trong khi thời gian trôi nhanh; thường dùng cho thành phố, travel và chuyển cảnh.",
+  "expansion_en": "Hyperlapse moving through the environment as time accelerates and the viewpoint advances rapidly.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 84,
+  "id": "timelapse",
+  "aliases": [],
+  "type": "atomic",
+  "group": "time",
+  "affects": "Time / specialty",
+  "explain_vi": "Thời gian được tua nhanh từ một góc tương đối ổn định; ví dụ ngày sang đêm, mây chạy, đám đông.",
+  "expansion_en": "Time-lapse progression showing environmental change over hours while the composition remains controlled.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 85,
+  "id": "low-shutter",
+  "aliases": [],
+  "type": "atomic",
+  "group": "time",
+  "affects": "Time / specialty",
+  "explain_vi": "Dùng cảm giác tốc độ màn trập thấp để tạo motion blur và light streak mạnh.",
+  "expansion_en": "Low-shutter cinematic motion with pronounced natural motion blur and light streaks during movement.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 86,
+  "id": "whip-pan",
+  "aliases": [],
+  "type": "atomic",
+  "group": "time",
+  "affects": "Time / specialty",
+  "explain_vi": "Pan cực nhanh tạo motion blur; rất hiệu quả để chuyển cảnh hoặc tăng năng lượng.",
+  "expansion_en": "Whip pan rapidly across the scene with strong directional motion blur, landing cleanly on the new subject.",
+  "pairs_with": [
+   "handheld",
+   "whip-transition",
+   "wide-angle"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 87,
+  "id": "camera-roll",
+  "aliases": [],
+  "type": "atomic",
+  "group": "time",
+  "affects": "Time / specialty",
+  "explain_vi": "Camera xoay quanh trục của ống kính; khiến đường chân trời quay và tạo cảm giác mất phương hướng.",
+  "expansion_en": "Controlled camera roll around the optical axis while maintaining subject position.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 88,
+  "id": "productexplosion",
+  "aliases": [],
+  "type": "macro",
+  "group": "ai_effect",
+  "affects": "Object/Props + Effect",
+  "explain_vi": "Hiệu ứng exploded-view: các bộ phận của một sản phẩm tách ra có trật tự quanh lõi chính để giải thích cấu tạo, sau đó có thể lắp lại. Chỉ nên áp dụng cho vật thể/sản phẩm, không áp dụng lên cơ thể người.",
+  "expansion_en": "Create a clean exploded-view of the product: separate its physical components outward in an organized symmetrical arrangement while preserving exact shape, scale and material, then smoothly reassemble the product.",
+  "pairs_with": [
+   "macro",
+   "orbit-180",
+   "robot-arm",
+   "static"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 89,
+  "id": "glambot",
+  "aliases": [],
+  "type": "composite",
+  "group": "time",
+  "affects": "Camera + Time + Performance",
+  "explain_vi": "Camera sweep tốc độ cao kết hợp slow motion của chủ thể; phong cách fashion/red carpet rất nổi bật.",
+  "expansion_en": "Glambot-style high-speed camera sweep around the subject, captured in elegant slow motion with a clean speed ramp.",
+  "pairs_with": [
+   "hero-cam",
+   "robot-arm"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 90,
+  "id": "hero-cam",
+  "aliases": [],
+  "type": "composite",
+  "group": "time",
+  "affects": "Camera + Angle",
+  "explain_vi": "Chuyển động làm chủ thể trông mạnh mẽ, thường low-angle + push/rise để kết ở hero composition.",
+  "expansion_en": "Hero camera move rising slightly from a low angle while pushing toward the subject for a powerful final composition.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 91,
+  "id": "through-object-in",
+  "aliases": [],
+  "type": "atomic",
+  "group": "ai_transition",
+  "affects": "Transition / spatial",
+  "explain_vi": "Hiệu ứng AI cho camera như xuyên qua một vật thể rắn để đi vào không gian phía sau.",
+  "expansion_en": "Camera pushes directly through the foreground object as if the lens can pass through solid material, revealing the scene beyond in one seamless move.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 92,
+  "id": "through-object-out",
+  "aliases": [],
+  "type": "atomic",
+  "group": "ai_transition",
+  "affects": "Transition / spatial",
+  "explain_vi": "Camera lùi/xuyên ngược qua một vật hoặc lỗ mở để reveal không gian rộng hơn.",
+  "expansion_en": "Camera pulls backward through the object/opening and emerges into a wider environment in one seamless transition.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 93,
+  "id": "foreground-wipe",
+  "aliases": [],
+  "type": "composite",
+  "group": "transition",
+  "affects": "Transition + Foreground",
+  "explain_vi": "Một vật ở rất gần lens che kín khung hình, tạo wipe tự nhiên để giấu điểm cắt.",
+  "expansion_en": "A foreground object passes very close across the lens, filling the frame and creating a natural wipe into the next composition.",
+  "pairs_with": [
+   "tracking",
+   "truck-left",
+   "truck-right"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 94,
+  "id": "whip-transition",
+  "aliases": [],
+  "type": "composite",
+  "group": "transition",
+  "affects": "Transition + Camera",
+  "explain_vi": "Dùng motion blur của whip pan để nối liền hai shot khác nhau.",
+  "expansion_en": "Fast whip-pan into full-frame motion blur, transitioning seamlessly into a matching whip-pan in the next scene.",
+  "pairs_with": [
+   "match-move",
+   "whip-pan"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 95,
+  "id": "match-move",
+  "aliases": [],
+  "type": "composite",
+  "group": "transition",
+  "affects": "Transition + Motion",
+  "explain_vi": "Nối hai shot bằng cách khớp hướng, tốc độ và vị trí màn hình của chuyển động.",
+  "expansion_en": "Match the direction, speed and screen position of the moving subject so the next shot continues the same motion seamlessly.",
+  "pairs_with": [],
+  "avoid": []
+ },
+ {
+  "num": 96,
+  "id": "occlusion-reveal",
+  "aliases": [],
+  "type": "composite",
+  "group": "transition",
+  "affects": "Transition + Spatial",
+  "explain_vi": "Bắt đầu bị vật tiền cảnh che và từ từ trượt ra để reveal nhân vật/chủ thể.",
+  "expansion_en": "Begin fully or partially hidden behind a foreground object, then slide out to reveal the subject in a single smooth move.",
+  "pairs_with": [
+   "push-in",
+   "truck-left",
+   "truck-right"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 97,
+  "id": "earth-zoom-out",
+  "aliases": [],
+  "type": "macro",
+  "group": "ai_effect",
+  "affects": "Scale + Transition",
+  "explain_vi": "Bắt đầu rất gần nhân vật rồi zoom/pull lên thành phố, quốc gia, lục địa và cuối cùng là Trái Đất.",
+  "expansion_en": "Start close on the subject, then pull rapidly upward from street to city to country to continent and finally the full Earth in one seamless scale transition.",
+  "pairs_with": [
+   "aerial-pullback",
+   "establishing"
+  ],
+  "avoid": [
+   "macrozoom"
+  ]
+ },
+ {
+  "num": 98,
+  "id": "earth-zoom-in",
+  "aliases": [],
+  "type": "macro",
+  "group": "ai_effect",
+  "affects": "Scale + Transition",
+  "explain_vi": "Bắt đầu ngoài không gian rồi lao xuống lục địa, thành phố, đường phố và kết ở đúng nhân vật.",
+  "expansion_en": "Start on planet Earth from orbit, descend through clouds to continent, city, street and finally land on the exact subject in one continuous zoom.",
+  "pairs_with": [
+   "aerial",
+   "establishing"
+  ],
+  "avoid": []
+ },
+ {
+  "num": 99,
+  "id": "macrozoom",
+  "aliases": [],
+  "type": "macro",
+  "group": "ai_effect",
+  "affects": "Scale + Focus + Camera",
+  "explain_vi": "Từ toàn cảnh liên tục tiến vào close-up rồi macro cho đến khi texture cực nhỏ lấp đầy khung.",
+  "expansion_en": "Begin on the full subject, then continuously push closer through medium, close-up and macro scale until tiny surface texture fills the frame.",
+  "pairs_with": [
+   "macro",
+   "rack-focus-near"
+  ],
+  "avoid": [
+   "earth-zoom-in",
+   "earth-zoom-out"
+  ]
+ },
+ {
+  "num": 100,
+  "id": "tvcommercial",
+  "aliases": [],
+  "type": "macro",
+  "group": "preset",
+  "affects": "Directing style + Camera",
+  "explain_vi": "Preset định hướng hình ảnh quảng cáo cao cấp: hero action, detail shot, camera mượt và final hero frame.",
+  "expansion_en": "Premium television-commercial treatment: concise hero action, polished product/wardrobe details, elegant camera movement, controlled lighting, clean final hero composition.",
+  "pairs_with": [
+   "hero-cam",
+   "macro",
+   "robot-arm"
+  ],
+  "avoid": []
+ }
+]
